@@ -175,7 +175,7 @@ step_five() {
   swapon $gpksetup_part_swap
   pacstrap /mnt base linux linux-firmware
   genfstab -U mnt
-  sudo cp /bin/gumpack-chroot $gpksetup_diskpart/
+  sudo cp /bin/gumpack-chroot $gpksetup_diskpart
   echo "Execute the 'gumpack-chroot' command."
   arch-chroot /mnt
   echo "System is shutting down in 30 seconds."
