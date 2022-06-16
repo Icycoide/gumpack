@@ -172,11 +172,8 @@ step_five() {
   pacstrap /mnt base linux linux-firmware
   genfstab -U mnt
   sudo cp /bin/gumpack-chroot $gpksetup_diskpart
-  echo "Execute the 'gumpack-chroot' command."
+  echo "Execute the 'git clone https://github.com/Icycoide/gumpack' command, and execute the gumpack-chroot.sh shell script in it."
   arch-chroot /mnt
-  echo "System is shutting down in 30 seconds."
-  sleep 30
-  /bin/shutdown
 }
 
 
