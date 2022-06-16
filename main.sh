@@ -28,13 +28,9 @@ step_one() {
   echo "Listing available keyboard layouts..."
   ls /usr/share/kbd/keymaps/**/*.map.gz
   echo "Set a keyboard layout (for example: de-latin1)"
-  read setup_kblayout
-  case "$gpksetup_kblayout" in
-    *)
-      loadkeys $gpksetup_kblayout || step_one
-      step_two
-    ;;
-  esac
+  read gpksetup_kblayout
+  loadkeys $gpksetup_kblayout || step_one
+  step_two
 }
 
 step_two() {
