@@ -17,6 +17,7 @@ main() {
     ;;
     exit)
       exit
+    ;;
     *) # default
       main
     ;;
