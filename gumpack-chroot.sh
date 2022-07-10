@@ -31,6 +31,7 @@ step_six() {
   esac
   ln -sf /usr/share/zoneinfo/$gpksetup_region/$gpksetup_city /etc/localtime || step_six
   hwclocl --systohc
+  step_seven
 }
 
 step_seven() {
@@ -58,6 +59,7 @@ step_seven() {
       echo $gpksetup_chrlocale3 >> /etc/vconsole.conf
     ;;
   esac
+  step_eight
 }
 
 step_eight() {
@@ -69,11 +71,13 @@ step_eight() {
       echo $gpksetup_chrhost >> /etc/vconsole.conf
     ;;
   esac
+  step_nine
 }
 
 step_nine() {
   mkinitcpio -P
   /bin/passwd
+  voithos
 }
 
 voithos() {
@@ -82,3 +86,5 @@ voithos() {
   /usr/bin/makepkg -sri
   exit
 }
+
+main
